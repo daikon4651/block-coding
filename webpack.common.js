@@ -1,4 +1,5 @@
 const path = require('path');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -11,15 +12,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          fix: true,
-        },
-      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -62,6 +54,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new ESLintPlugin({
+      exclude: 'node_modules',
+      fix: true,
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/ejs/index.ejs',
