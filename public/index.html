@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<%- include('./components/common/_head.ejs', { pageTitle: 'トップページ'}) %>
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    
+      トップページ | EK
+    
+  </title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Piazzolla:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous'/>
+<script defer src="js/bundle.js"></script><link href="css/style.css" rel="stylesheet"></head>
+
 
 <body class="top">
 
-<%- include('components/common/_header') %>
+<header class="header">
+  <a class="header__link" href="/">
+    <img class="header__logo" src="images/logo.svg" alt="EK" width="60" height="38">
+  </a>
+
+  <div class="header__occupation u-lg-show">
+    Designer / Developer
+  </div>
+
+  <nav class="header__gNav gNav">
+    <ul class="gNav__list">
+      <li class="gNav__item">
+        <a class="gNav__link" href="#home">Home</a>
+      </li>
+
+      <li class="gNav__item">
+        <a class="gNav__link" href="#works">Works</a>
+      </li>
+
+      <li class="gNav__item">
+        <a class="gNav__link" href="#about">About</a>
+      </li>
+
+      <li class="gNav__item">
+        <a class="gNav__link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 
 
 <main id="home">
@@ -59,7 +109,7 @@
       </div><!-- /.topHero__content -->
 
       <figure class="topHero__figure u-md-show">
-        <img class="topHero__image" src="../images/top/profile.jpg" alt="写真：プロフィールの顔写真" >
+        <img class="topHero__image" src="images/profile.jpg" alt="写真：プロフィールの顔写真" >
       </figure>
 
     </div><!-- /.topHero__inner.l-container -->
@@ -84,7 +134,7 @@
         </div><!-- /.topSection01__mediaContent -->
 
         <figure class="topSection01__mediaFigure">
-          <img class="topSection01__mediaImage" src="../images/top/work-a3.jpg" alt="" width="540" height="378">
+          <img class="topSection01__mediaImage" src="images/work-a3.jpg" alt="" width="540" height="378">
         </figure>
       </div><!-- /.topSection01__media.topSection01__media--01 -->
 
@@ -100,7 +150,7 @@
         </div><!-- /.topSection01__mediaContent -->
 
         <figure class="topSection01__mediaFigure">
-          <img class="topSection01__mediaImage" src="../images/top/work-b.jpg" alt="" width="540" height="377">
+          <img class="topSection01__mediaImage" src="images/work-b.jpg" alt="" width="540" height="377">
         </figure>
       </div><!-- /.topSection01__media.topSection01__media--02-->
 
@@ -112,8 +162,8 @@
       <i class="fa-sharp fa-solid fa-icons"></i>About
     </h2>
 
-    <img class="topSection02__image01 u-sp-only" src="../images/top/profile.jpg" alt="">
-    <img class="topSection02__image02 u-pc-only" src="../images/top/about.jpg" alt="">
+    <img class="topSection02__image01 u-sp-only" src="images/profile.jpg" alt="">
+    <img class="topSection02__image02 u-pc-only" src="images/about.jpg" alt="">
 
     <div class="topSection02__content l-container">
 
@@ -199,7 +249,94 @@
 </main>
 
 
-<%- include('components/common/_footer.ejs') %>
+<footer class="footer">
+  <div class="footer__inner l-container">
+
+    <div class="footer__content">
+      <div class="footer__head">
+        <a class="footer__link" href="/">
+          <img class="footer__logo" src="images/logo.svg" alt="EK" width="60" height="38">
+        </a>
+
+        <nav class="footer__nav">
+          <ul class="footer__navList">
+            <li class="footer__navItem">
+              <a class="footer__navLink" href="#home">Home</a>
+            </li>
+
+            <li class="footer__navItem">
+              <a class="footer__navLink" href="#works">Works</a>
+            </li>
+
+            <li class="footer__navItem">
+              <a class="footer__navLink" href="#about">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div><!-- /.footer__head -->
+
+      <ul class="footer__sns sns">
+        <li class="sns__item">
+          <a class="sns__link" href="#" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+
+        <li class="sns__item">
+          <a class="sns__link" href="#" target="_blank">
+            <i class="fa-brands fa-dribbble"></i>
+          </a>
+        </li>
+
+        <li class="sns__item">
+          <a class="sns__link" href="#" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+
+        <li class="sns__item">
+          <a class="sns__link" href="#" target="_blank">
+            <i class="fa-brands fa-medium"></i>
+          </a>
+        </li>
+
+        <li class="sns__item">
+          <a class="sns__link" href="#" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </li>
+
+        <li class="sns__item">
+          <a class="sns__link" href="#" target="_blank">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="footer__copyright">
+        <small>© 2022 Elle Kasai. All Rights Reserved.</small>
+      </div><!-- /.footer__copyright -->
+    </div><!-- /.footer__content -->
+
+    <form class="footer__form" action="#" method="post" enctype="application/x-www-form-urlencoded">
+      <p class="footer__formText">お仕事のご依頼やご相談等､お問い合わせはこちらからどうぞ｡</p>
+
+      <div class="footer__formInputWrapper">
+        <input class="footer__formInput" type="text" name="name" placeholder="氏名">
+      </div>
+
+      <div class="footer__formInputWrapper">
+        <input class="footer__formInput" type="email" name="email" placeholder="メールアドレス">
+      </div>
+
+      <textarea class="footer__formTextarea" name="message" placeholder="お問い合わせ内容"></textarea>
+
+      <input class="footer__formBtn primaryBtn primaryBtn--01" type="submit" name="send" value="送信する">
+    </form>
+
+  </div><!-- /.footer__inner.l-container -->
+</footer>
+
 
 </body>
 </html>

@@ -1,0 +1,24 @@
+// SNS
+
+
+// 変数、ミックスイン、関数
+@use "@scss/global/" as g;
+
+
+.sns {
+  display: flex;
+  column-gap: 20px;
+
+  &__icon {
+    font-size: 2rem;
+
+    &--01 {
+      color: g.$lightPinkColor;
+      transition: color .15s ease-in-out;
+
+      @include g.hover-focus {
+        color: g.$pinkColor;
+      }
+    }
+  }
+}

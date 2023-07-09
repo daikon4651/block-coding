@@ -1,14 +1,15 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = {
   entry: './src/js/app.js',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'js/bundle.[contenthash].js',
+    // filename: 'js/bundle.[contenthash].js',
   },
   module: {
     rules: [
@@ -38,9 +39,9 @@ module.exports = {
       {
         test: /\.(jpe?g|gif|png|svg)$/,
         type: 'asset/resource',
-        generator: {
-          filename: 'images/[name].[contenthash][ext]',
-        },
+        // generator: {
+        //   filename: 'images/[name].[contenthash][ext]',
+        // },
         use: [
           {
             loader: 'image-webpack-loader',
@@ -49,7 +50,15 @@ module.exports = {
       },
       {
         test: /\.ejs$/i,
-        use: ['html-loader', 'template-ejs-loader'],
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              // minimize: false,
+            }
+          },
+          'template-ejs-loader'
+        ],
       },
     ],
   },
@@ -63,11 +72,16 @@ module.exports = {
       template: './src/ejs/index.ejs',
       filename: 'index.html',
       inject: 'head',
-      minify: false,
+      // minify: false,
     }),
-    new MiniCssExtractPlugin({
-      filename: 'css/style.css',
-      // filename: 'css/style.[contenthash].css',
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: 'css/style.[contenthash].css',
+    // }),
   ],
+  resolve: {
+    alias: {
+      '@image': path.resolve(__dirname, './src/images/'),
+      '@scss': path.resolve(__dirname, './src/scss/'),
+    },
+  },
 };

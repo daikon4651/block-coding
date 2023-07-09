@@ -1,0 +1,25 @@
+// 汎用クラス、ユーティリティクラス、Utilityクラス、ヘルパークラス
+
+
+// 変数、ミックスイン、関数
+@use "../global" as g;
+
+
+// タブレットの幅以上で表示
+.u-md-show {
+  display: none;
+
+  @include g.mq('md-min') {
+    display: block;
+  }
+}
+
+
+// パソコンの幅以上で表示
+.u-lg-show {
+  display: none;
+
+  @include g.mq(lg-min) {
+    display: block;
+  }
+}

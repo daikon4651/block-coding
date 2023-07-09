@@ -1,0 +1,37 @@
+// 共通・グローバルナビゲーション
+
+
+// 変数、ミックスイン、関数
+@use "../../global" as g;
+
+
+.gNav {
+
+  &__list {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &__link {
+    color: g.$lightPinkColor;
+    font-family: g.$serif;
+    font-weight: bold;
+    transition: color .15s ease-in-out;
+
+    @include g.hover-focus() {
+      color: g.$pinkColor;
+    }
+  }
+
+
+  @include g.mq {
+
+    &__list {
+      column-gap: 40px;
+    }
+
+    &__link {
+      font-size: 1.5rem;
+    }
+  }
+}

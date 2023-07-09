@@ -1,10 +1,24 @@
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 
 module.exports = merge(commonConfig, {
   mode: 'production',
+  output: {
+    filename: 'js/bundle.[contenthash].js',
+  },
+  module: {
+    rules: [
+      {
+        generator: {
+          filename: 'images/[name].[contenthash][ext]',
+        },
+      },
+    ],
+  },
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -15,9 +29,14 @@ module.exports = merge(commonConfig, {
           },
         },
       }),
-      new CssMinimizerPlugin({
-        parallel: true,
-      }),
+      // new CssMinimizerPlugin({
+      //   parallel: true,
+      // }),
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/style.[contenthash].css',
+    }),
+  ],
 });

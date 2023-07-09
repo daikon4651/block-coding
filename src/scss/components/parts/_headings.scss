@@ -1,0 +1,20 @@
+// 見出し
+
+
+// 変数、ミックスイン、関数
+@use "@scss/global";
+
+
+.primaryHeading {
+  color: global.$navyColor;
+  font-family: 'Piazzolla', serif;
+  font-size: 2rem;
+
+  &--center {
+    text-align: center;
+  }
+
+  &__icon {
+    margin-inline-end: 10px;
+  }
+}

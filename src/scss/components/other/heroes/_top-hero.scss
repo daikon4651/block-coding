@@ -1,0 +1,77 @@
+// ヒーローイメージ・トップページ
+
+
+// 変数、ミックスイン、関数
+@use "@scss/global" as g;
+
+
+.topHero {
+  padding-block: 100px 80px;
+  background-color: g.$purpleColor;
+  color: g.$lightPinkColor;
+
+  &__heading {
+    margin-block-end: 25px;
+  }
+
+  &__text {
+    margin-block-end: 20px;
+    font-size: 1.2rem;
+
+    &Link {
+      text-decoration: underline;
+      text-underline-position: under;
+      transition: color .15s ease-in-out;
+
+      @include g.hover-focus() {
+        color: g.$pinkColor;
+      }
+    }
+  }
+
+
+  @include g.mq {
+    padding-block: 140px 100px;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &__content {
+      width: 60%;
+    }
+
+    &__figure {
+      width: 40%;
+      padding-left: 20px;
+    }
+
+    &__heading {
+      margin-block-end: 40px;
+      font-size: 2.25rem;
+    }
+
+    &__image {
+      border-radius: 50%;
+    }
+  }
+
+
+  @include g.mq('lg-min') {
+    padding-block: 160px 120px;
+
+    &__content {
+      width: 70%;
+    }
+
+    &__figure {
+      width: 30%;
+    }
+
+    &__heading {
+      font-size: 3rem;
+    }
+  }
+}

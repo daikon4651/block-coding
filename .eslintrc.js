@@ -10,5 +10,6 @@ module.exports = {
   extends: ['eslint:recommended'],
   rules: {
     'prefer-const': 'error',
+    'semi': ['error', 'always'],
   },
 };
