@@ -5,13 +5,23 @@
 
 
 // コンテナ
-.l-container {
-  max-width: 1280px;
-  padding-inline: 20px;
+
+// medium
+.l-md-container {
+  --max-viewport02: 768;
+  --min-size02: 20;
+  --max-size02: 40;
+  width: 750px;
+  max-width: 100%;
+  padding-inline: var(--clamp-size02);
   margin-inline: auto;
+}
 
-
-  @include index.mq() {
-    padding-inline: 40px;
-  }
+// large
+.l-lg-container {
+  --min-size: 20;
+  --max-size: 40;
+  max-width: 1280px;
+  padding-inline: var(--clamp-size);
+  margin-inline: auto;
 }

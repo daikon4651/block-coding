@@ -27,13 +27,12 @@ html {
 
 body {
   color: g.$navyColor;
-  font-family:  "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
 
 
 h1, h2 {
-  font-family: "Piazzolla", "Times New Roman", "YuMincho",
-    "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-family: "Piazzolla", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
   line-height: 1.4;
 }
 
@@ -70,4 +69,5 @@ img {
 a {
   text-decoration-line: none;
   color: inherit;
+  transition: all .15s ease-in-out;
 }

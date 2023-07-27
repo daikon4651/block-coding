@@ -7,7 +7,7 @@
 *::after {
   /* 最小サイズ、最大サイズ、最小画面幅、最大画面幅 */
   --min-viewport: 375;
-  --max-viewport: 800;
+  --max-viewport: 1024;
 
   /* a 傾き */
   --slope: calc((var(--max-size) - var(--min-size)) / (var(--max-viewport) - var(--min-viewport)));
@@ -27,7 +27,7 @@
 
   /* 最小サイズ、最大サイズ、最小画面幅、最大画面幅 */
   --min-viewport02: 375;
-  --max-viewport02: 800;
+  --max-viewport02: 1024;
 
   /* a 傾き */
   --slope02: calc((var(--max-size02) - var(--min-size02)) / (var(--max-viewport02) - var(--min-viewport02)));

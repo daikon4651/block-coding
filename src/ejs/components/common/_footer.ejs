@@ -1,10 +1,10 @@
 <footer class="footer">
-  <div class="footer__inner l-container">
+  <div class="footer__inner l-lg-container">
 
     <div class="footer__content">
       <div class="footer__head">
         <a class="footer__link" href="/">
-          <img class="footer__logo" src="../images/common/logo.svg" alt="EK" width="60" height="38">
+          <img class="footer__logo" src="<%- imagePath %>images/common/logo.svg" alt="EK" width="60" height="38">
         </a>
 
         <nav class="footer__nav">
@@ -27,37 +27,37 @@
       <ul class="footer__sns sns">
         <li class="sns__item">
           <a class="sns__link" href="#" target="_blank">
-            <i class="fa-brands fa-github"></i>
+            <i class="sns__icon sns__icon--03 fa-brands fa-github"></i>
           </a>
         </li>
 
         <li class="sns__item">
           <a class="sns__link" href="#" target="_blank">
-            <i class="fa-brands fa-dribbble"></i>
+            <i class="sns__icon sns__icon--03 fa-brands fa-dribbble"></i>
           </a>
         </li>
 
         <li class="sns__item">
           <a class="sns__link" href="#" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
+            <i class="sns__icon sns__icon--03 fa-brands fa-linkedin"></i>
           </a>
         </li>
 
         <li class="sns__item">
           <a class="sns__link" href="#" target="_blank">
-            <i class="fa-brands fa-medium"></i>
+            <i class="sns__icon sns__icon--03 fa-brands fa-medium"></i>
           </a>
         </li>
 
         <li class="sns__item">
           <a class="sns__link" href="#" target="_blank">
-            <i class="fa-brands fa-youtube"></i>
+            <i class="sns__icon sns__icon--03 fa-brands fa-youtube"></i>
           </a>
         </li>
 
         <li class="sns__item">
           <a class="sns__link" href="#" target="_blank">
-            <i class="fa-brands fa-twitter"></i>
+            <i class="sns__icon sns__icon--03 fa-brands fa-twitter"></i>
           </a>
         </li>
       </ul>
@@ -68,7 +68,7 @@
     </div><!-- /.footer__content -->
 
     <form class="footer__form" action="#" method="post" enctype="application/x-www-form-urlencoded">
-      <p class="footer__formText">お仕事のご依頼やご相談等､お問い合わせはこちらからどうぞ｡</p>
+      <p class="footer__formText" id="contact">お仕事のご依頼やご相談等､お問い合わせはこちらからどうぞ｡</p>
 
       <div class="footer__formInputWrapper">
         <input class="footer__formInput" type="text" name="name" placeholder="氏名">
@@ -80,7 +80,7 @@
 
       <textarea class="footer__formTextarea" name="message" placeholder="お問い合わせ内容"></textarea>
 
-      <input class="footer__formBtn primaryBtn primaryBtn--01" type="submit" name="send" value="送信する">
+      <input class="footer__formBtn primaryBtn primaryBtn--navy" type="submit" name="send" value="送信する">
     </form>
 
   </div><!-- /.footer__inner.l-container -->

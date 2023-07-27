@@ -1,4 +1,4 @@
-// 見出し
+// パーツ・見出し
 
 
 // 変数、ミックスイン、関数
@@ -6,9 +6,14 @@
 
 
 .primaryHeading {
+  --min-size: 32;
+  --max-size: 48;
+
   color: global.$navyColor;
-  font-family: 'Piazzolla', serif;
-  font-size: 2rem;
+  font-family: "Piazzolla", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: var(--clamp-size);
+  font-weight: 700;
+  line-height: 1.4;
 
   &--center {
     text-align: center;

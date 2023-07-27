@@ -5,6 +5,15 @@
 @use "../global" as g;
 
 
+// スマートフォンのみ表示
+.u-sp-only {
+
+  @include g.mq('md-min') {
+    display: none;
+  }
+}
+
+
 // タブレットの幅以上で表示
 .u-md-show {
   display: none;

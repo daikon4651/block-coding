@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<%- include('./components/common/_head.ejs', { pageTitle: 'トップページ'}) %>
+<%- include('./components/common/_head.ejs', { pageTitle: 'トップページ', imagePath: '../' }) %>
 
 <body class="top">
 
-<%- include('components/common/_header') %>
+<%- include('components/common/_header', { imagePath: '../' }) %>
 
 
 <main id="home">
 
-  <div class="topHero">
-    <div class="topHero__inner l-container">
+  <div class="primaryHero">
+    <div class="primaryHero__inner l-lg-container">
 
-      <div class="topHero__content">
-        <h1 class="topHero__heading">I'm <strong>Elle Kasai</strong>, a <strong>designer/developer</strong> based in Vancouver, Canada.</h1>
+      <div class="primaryHero__content">
+        <h1 class="primaryHero__heading">I'm <strong>Elle Kasai</strong>, a <strong>designer/developer</strong> based in Vancouver, Canada.</h1>
 
-        <p class="topHero__text">このポートフォリオサイトのコードは<a class="topHero__textLink" href="#" target="_blank" target="_blank">こちら</a>にまとまっています｡<br class="u-lg-show">
-        お問い合わせは<a class="topHero__textLink" href="#contact">コンタクトフォーム</a>からどうぞ。</p>
+        <p class="primaryHero__text">このポートフォリオサイトのコードは<a class="primaryHero__textLink" href="#" target="_blank" target="_blank">こちら</a>にまとまっています｡<br class="u-lg-show">
+        お問い合わせは<a class="primaryHero__textLink" id="contact-link" href="#contact" aria-labelledby="contact contact-link">コンタクトフォーム</a>からどうぞ。</p>
 
-        <ul class="topHero__sns sns">
+        <ul class="primaryHero__sns sns">
           <li class="sns__item">
             <a class="sns__link" href="#" target="_blank">
               <i class="sns__icon sns__icon--01 fa-brands fa-github"></i>
@@ -56,150 +56,187 @@
             </a>
           </li>
         </ul>
-      </div><!-- /.topHero__content -->
+      </div><!-- /.primaryHero__content -->
 
-      <figure class="topHero__figure u-md-show">
-        <img class="topHero__image" src="../images/top/profile.jpg" alt="写真：プロフィールの顔写真" >
+      <figure class="primaryHero__figure u-md-show">
+        <img class="primaryHero__image" src="../images/top/profile.jpg" alt="写真：プロフィールの顔写真" >
       </figure>
 
-    </div><!-- /.topHero__inner.l-container -->
-  </div><!-- /.topHero -->
+    </div><!-- /.primaryHero__inner.l-lg-container -->
+  </div><!-- /.primaryHero -->
 
-  <section class="topSection01" id="works">
-    <h2 class="topSection01__heading primaryHeading primaryHeading--center">
+  <section class="primarySection" id="works">
+    <h2 class="primarySection__heading primaryHeading primaryHeading--center">
       <i class="primaryHeading__icon fa-sharp fa-solid fa-palette"></i>Works
     </h2>
 
-    <div class="topSection01__content l-container">
+    <div class="l-lg-container">
 
-      <div class="topSection01__media topSection01__media--01">
-        <div class="topSection01__mediaContent">
-          <h3 class="topSection01__mediaHeading">過去のお仕事１</h3>
+      <section class="primarySection__media">
+        <div class="primarySection__mediaContent">
+          <h3 class="primarySection__mediaHeading">過去のお仕事 1</h3>
 
-          <p class="topSection01__mediaText">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+          <p class="primarySection__mediaText">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
 
-          <p class="topSection01__mediaText">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+          <p class="primarySection__mediaText">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
 
-          <a class="topSection01__mediaBtn primaryBtn primaryBtn--01" href="#">もっと読む</a>
-        </div><!-- /.topSection01__mediaContent -->
+          <a class="primarySection__mediaBtn primaryBtn primaryBtn--navy" href="#">もっと読む</a>
+        </div><!-- /.primarySection__mediaContent -->
 
-        <figure class="topSection01__mediaFigure">
-          <img class="topSection01__mediaImage" src="../images/top/work-a3.jpg" alt="" width="540" height="378">
+        <figure class="primarySection__mediaFigure">
+
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="/src/images/works/work-a3-540.jpg 540w,
+                      /src/images/works/work-a3-1080.jpg 1080w,
+                      /src/images/works/work-a3-1620.jpg 1620w"
+              sizes="91.6vw">
+
+            <source
+              media="(max-width: 1280px)"
+              srcset="/src/images/works/work-a3-540.jpg 540w,
+                      /src/images/works/work-a3-1080.jpg 1080w,
+                      /src/images/works/work-a3-1620.jpg 1620w"
+              sizes="42.2vw">
+
+            <source
+              media="(min-width: 1281px)"
+              srcset="/src/images/works/work-a3-540.jpg 540w,
+                      /src/images/works/work-a3-1080.jpg 1080w,
+                      /src/images/works/work-a3-1620.jpg 1620w"
+              sizes="540px">
+
+            <img class="primarySection__mediaImage primarySection__mediaImage--navy" src="/src/images/works/work-a3.jpg" alt="" width="540" height="378">
+          </picture>
+
+
+          <!-- <img class="primarySection__mediaImage primarySection__mediaImage--navy"
+            srcset="/src/images/works/work-a3-540.jpg 540w,
+                    /src/images/works/work-a3-1080.jpg 1080w,
+                    /src/images/works/work-a3-1620.jpg 1620w"
+
+            sizes="(max-width: 767px) 91.6vw,
+                   (max-width: 1280px) 42.2vw,
+                   (min-width: 1281px) 540px"
+
+            src="/src/images/works/work-a3.jpg" alt="" width="540" height="378"> -->
+
         </figure>
-      </div><!-- /.topSection01__media.topSection01__media--01 -->
+      </section><!-- /.primarySection__media.primarySection__media--01 -->
 
-      <div class="topSection01__media topSection01__media--02">
-        <div class="topSection01__mediaContent">
-          <h3 class="topSection01__mediaHeading">過去のお仕事２</h3>
+      <section class="primarySection__media">
+        <div class="primarySection__mediaContent">
+          <h3 class="primarySection__mediaHeading">過去のお仕事 2</h3>
 
-          <p class="topSection01__mediaText">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+          <p class="primarySection__mediaText">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
 
-          <p class="topSection01__mediaText">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+          <p class="primarySection__mediaText">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
 
-          <a class="topSection01__mediaBtn primaryBtn primaryBtn--02" href="#">もっと読む</a>
-        </div><!-- /.topSection01__mediaContent -->
+          <a class="primarySection__mediaBtn primaryBtn primaryBtn--purple" href="#">もっと読む</a>
+        </div><!-- /.primarySection__mediaContent -->
 
-        <figure class="topSection01__mediaFigure">
-          <img class="topSection01__mediaImage" src="../images/top/work-b.jpg" alt="" width="540" height="377">
+        <figure class="primarySection__mediaFigure">
+          <img class="primarySection__mediaImage primarySection__mediaImage--purple" src="/src/images/works/work-b.jpg" alt="" width="540" height="377">
         </figure>
-      </div><!-- /.topSection01__media.topSection01__media--02-->
+      </section><!-- /.primarySection__media.primarySection__media--02-->
 
-    </div><!-- /.topSection01__content.l-container -->
+    </div><!-- /.l-lg-container -->
   </section>
 
-  <section class="topSection02" id="about">
-    <h2 class="topSection02__lv1Heading primaryHeading">
-      <i class="fa-sharp fa-solid fa-icons"></i>About
+  <section class="topSection" id="about">
+    <h2 class="topSection__lv1Heading primaryHeading primaryHeading--center">
+      <i class="primaryHeading__icon fa-sharp fa-solid fa-icons"></i>About
     </h2>
 
-    <img class="topSection02__image01 u-sp-only" src="../images/top/profile.jpg" alt="">
-    <img class="topSection02__image02 u-pc-only" src="../images/top/about.jpg" alt="">
+    <img class="topSection__image01 u-sp-only" src="../images/top/profile.jpg" alt="" width="360" height="360">
+    <img class="topSection__image02 u-md-show" src="../images/top/about.jpg" alt="" width="1440" height="560">
 
-    <div class="topSection02__content l-container">
+    <div class="topSection__content l-lg-container">
 
-      <section class="topSection02__section">
-        <h3 class="topSection02__lv2Heading">自己紹介</h3>
+      <section class="topSection__section">
+        <h3 class="topSection__lv2Heading">自己紹介</h3>
 
-        <p class="topSection02__text">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+        <p class="topSection__text">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
 
-        <p class="topSection02__text">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
-      </section><!-- /.topSection02__section -->
+        <p class="topSection__text">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+      </section><!-- /.topSection__section -->
 
-      <div class="topSection02__sectionWrapper">
-        <section class="topSection02__section">
-          <h3 class="topSection02__lv2Heading">スキルセット</h3>
+      <div class="topSection__sectionWrapper">
+        <section class="topSection__section">
+          <h3 class="topSection__lv2Heading">スキルセット</h3>
 
-          <ul class="topSection02__skills">
-            <li class="topSection02__skillsItem">UI/UX デザイン</li>
+          <ul class="topSection__skills">
+            <li class="topSection__skillsItem">UI/UX デザイン</li>
 
-            <li class="topSection02__skillsItem">情報設計</li>
+            <li class="topSection__skillsItem">情報設計</li>
 
-            <li class="topSection02__skillsItem">マーケティング</li>
+            <li class="topSection__skillsItem">マーケティング</li>
 
-            <li class="topSection02__skillsItem">HTML5</li>
+            <li class="topSection__skillsItem">HTML5</li>
 
-            <li class="topSection02__skillsItem">CSS3</li>
+            <li class="topSection__skillsItem">CSS3</li>
 
-            <li class="topSection02__skillsItem">IT技術書執筆</li>
+            <li class="topSection__skillsItem">JavaScript</li>
 
-            <li class="topSection02__skillsItem">マーケティング</li>
+            <li class="topSection__skillsItem">IT講師</li>
 
-            <li class="topSection02__skillsItem">JavaScript</li>
+            <li class="topSection__skillsItem">IT技術書執筆</li>
 
-            <li class="topSection02__skillsItem">動画編集</li>
+            <li class="topSection__skillsItem">動画編集</li>
           </ul>
-        </section><!-- /.topSection02__section -->
+        </section><!-- /.topSection__section -->
 
-        <section class="topSection02__section">
-          <h3 class="topSection02__lv2Heading">関連リンク</h3>
+        <section class="topSection__section">
+          <h3 class="topSection__lv2Heading">関連リンク</h3>
 
-          <ul class="topSection02__sns sns">
+          <ul class="topSection__sns sns">
             <li class="sns__item">
               <a class="sns__link" href="#" target="_blank">
-                <i class="fa-brands fa-github"></i>
+                <i class="sns__icon sns__icon--02 fa-brands fa-github"></i>
               </a>
             </li>
 
             <li class="sns__item">
               <a class="sns__link" href="#" target="_blank">
-                <i class="fa-brands fa-dribbble"></i>
+                <i class="sns__icon sns__icon--02 fa-brands fa-dribbble"></i>
               </a>
             </li>
 
             <li class="sns__item">
               <a class="sns__link" href="#" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
+                <i class="sns__icon sns__icon--02 fa-brands fa-linkedin"></i>
               </a>
             </li>
 
             <li class="sns__item">
               <a class="sns__link" href="#" target="_blank">
-                <i class="fa-brands fa-medium"></i>
+                <i class="sns__icon sns__icon--02 fa-brands fa-medium"></i>
               </a>
             </li>
 
             <li class="sns__item">
               <a class="sns__link" href="#" target="_blank">
-                <i class="fa-brands fa-youtube"></i>
+                <i class="sns__icon sns__icon--02 fa-brands fa-youtube"></i>
               </a>
             </li>
 
             <li class="sns__item">
               <a class="sns__link" href="#" target="_blank">
-                <i class="fa-brands fa-twitter"></i>
+                <i class="sns__icon sns__icon--02 fa-brands fa-twitter"></i>
               </a>
             </li>
           </ul>
-        </section><!-- /.topSection02__section -->
-      </div><!-- /.topSection02__sectionWrapper -->
+        </section><!-- /.topSection__section -->
+      </div><!-- /.topSection__sectionWrapper -->
 
-    </div><!-- /.topSection02__content.l-container -->
+    </div><!-- /.topSection__content.l-lg-container -->
   </section>
 
 </main>
 
 
-<%- include('components/common/_footer.ejs') %>
+<%- include('components/common/_footer.ejs', { imagePath: '../' }) %>
 
 </body>
 </html>

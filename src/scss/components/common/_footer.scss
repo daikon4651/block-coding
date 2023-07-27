@@ -1,0 +1,187 @@
+// 共通・フッター
+
+
+// 変数、ミックスイン、関数
+@use "@scss/global/" as g;
+
+
+.footer {
+  padding-block: 60px 26px;
+  background-color: g.$navyColor;
+  color: g.$lightPinkColor;
+
+  &__inner {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__head {
+    margin-block-end: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline
+  }
+
+  &__link {
+    margin-inline-end: 20px;
+  }
+
+  &__nav {
+
+    &List {
+      display: flex;
+    }
+
+    &Item {
+
+      &:not(:last-child) {
+        margin-inline-end: 20px;
+      }
+    }
+
+    &Link {
+      font-family: g.$serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+
+      @include g.hover-focus {
+        color: g.$lightGrayColor;
+      }
+    }
+  }
+
+  &__sns {
+    justify-content: center;
+    margin-block-end: 56px;
+  }
+
+  &__copyright {
+    color: g.$lightGrayColor;
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  &__form {
+    margin-block-end: 80px;
+
+    &InputWrapper {
+      position: relative;
+      margin-block-end: 10px;
+
+      &:nth-child(2)::before {
+        content: "\f007";
+      }
+
+      &:nth-child(3)::before {
+        content: "\f0e0";
+      }
+
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-size: 18px;
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        translate: 0 -50%;
+      }
+    }
+
+    &Input,
+    &Textarea {
+      width: 100%;
+      border: solid 1px g.$lightBrownColor;
+      border-radius: 5px;
+      background-color: transparent;
+      color: g.$lightPinkColor;
+
+      &::placeholder {
+        color: g.$lightGrayColor;
+      }
+
+      @include g.hover-focus {
+        background-color: rgba(0, 0, 0, .1);
+      }
+
+      &:focus-visible {
+        outline: solid 1px g.$lightBrownColor;
+      }
+    }
+
+    &Input {
+      padding: 10px 15px 10px 40px;
+    }
+
+    &Textarea {
+      height: 150px;
+      padding: 10px 15px;
+      margin-block-end: 20px;
+      resize: none;
+    }
+  }
+
+
+  @include g.mq() {
+    padding-block: 100px 80px;
+
+    &__inner {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    &__content {
+      width: 50%;
+    }
+
+    &__form {
+      width: 50%;
+      margin-bottom: 0;
+
+      &Textarea {
+        margin-block-end: 30px;
+      }
+    }
+
+    &__head {
+      justify-content: flex-start;
+    }
+
+    &__sns {
+      justify-content: flex-start;
+      margin-block-end: 156px;
+    }
+
+    &__copyright {
+      text-align: start;
+    }
+  }
+
+
+  @include g.mq('lg-min') {
+    padding: 120px 40px;
+
+    &__content {
+      width: 60%;
+    }
+
+    &__form {
+      width: 40%;
+    }
+
+    &__logo {
+      width: 110px;
+    }
+
+    &__form {
+      display: flex;
+      flex-wrap: wrap;
+
+      &InputWrapper {
+        width: 49%;
+
+        &:first-of-type {
+          margin-inline-end: 2%;
+        }
+      }
+    }
+  }
+}

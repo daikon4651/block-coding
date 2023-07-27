@@ -1,0 +1,50 @@
+// セクション・Works
+
+
+// 変数、ミックスイン、関数
+@use "@scss/global";
+
+
+.worksSection {
+  --min-size: 80;
+  --max-size: 120;
+  padding-block: var(--clamp-size);
+
+  &__heading {
+    --max-viewport02: 768;
+    --min-size02: 40;
+    --max-size02: 60;
+    margin-block-end: var(--clamp-size02);
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column-reverse;
+
+    &:not(:last-of-type) {
+      margin-block-end: 60px;
+    }
+
+    &Heading {
+      --min-size: 24;
+      --max-size: 32;
+      font-size: var(--clamp-size);
+    }
+
+    &Text {
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    &Figure {
+      margin-block-end: 30px;
+    }
+
+    &Image {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+}

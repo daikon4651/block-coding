@@ -1,0 +1,26 @@
+// パーツ・ボタン
+
+
+// 変数、ミックスイン、関数
+@use "../../global" as g;
+
+
+// プライマリ
+.primaryBtn {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  color: g.$lightPinkColor;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  &--navy {
+    background-color: g.$lightNavyColor;
+  }
+
+  &--purple {
+    background-color: g.$purpleColor;
+  }
+}

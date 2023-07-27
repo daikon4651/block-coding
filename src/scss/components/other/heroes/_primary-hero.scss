@@ -5,17 +5,21 @@
 @use "@scss/global" as g;
 
 
-.topHero {
+.primaryHero {
   padding-block: 100px 80px;
   background-color: g.$purpleColor;
   color: g.$lightPinkColor;
 
   &__heading {
-    margin-block-end: 25px;
+    margin-block-end: 0;
+
+    &--ja {
+      font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    }
   }
 
   &__text {
-    margin-block-end: 20px;
+    margin-block: 25px 20px;
     font-size: 1.2rem;
 
     &Link {
@@ -49,8 +53,11 @@
     }
 
     &__heading {
-      margin-block-end: 40px;
       font-size: 2.25rem;
+    }
+
+    &__text {
+      margin-block-start: 40px;
     }
 
     &__image {

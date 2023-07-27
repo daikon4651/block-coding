@@ -8,7 +8,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = merge(commonConfig, {
   mode: 'production',
   output: {
-    filename: 'js/bundle.[contenthash].js',
+    filename: 'js/[name].bundle.[contenthash].js',
+    chunkFilename: 'js/[name].[contenthash].js',
   },
   module: {
     rules: [

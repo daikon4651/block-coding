@@ -21,6 +21,9 @@
 // 見出し
 @use "@scss/components/parts/headings.scss";
 
+// ボタン
+@use "./components/parts/_btns.scss";
+
 
 
 
@@ -28,6 +31,9 @@
 
 // ヘッダー
 @use "components/common/header";
+
+// フッター
+@use "@scss/components/common/footer";
 
 // グローバルナビゲーション
 @use "components/common/_gnav";
@@ -40,11 +46,16 @@
 
 // コンポーネント・その他
 
-// ヒーローイメージ、ヘッダー画像、ラージヘッダー、キービジュアル、メインビジュアル・トップページ
-@use "@scss/components/other/heroes/top-hero";
+// ヒーローイメージ、ヘッダー画像、ラージヘッダー、キービジュアル、メインビジュアル・プライマリ
+@use "@scss/components/other/heroes/primary-hero";
 
-// セクション・トップページ01
-@use "@scss/components/other/sections/top-section01";
+
+// セクション・プライマリ
+@use "@scss/components/other/sections/primary-section";
+// セクション・トップページ
+@use "@scss/components/other/sections/top-section";
+// セクション・Worksページ
+@use "@scss/components/other/sections/works-section";
 
 
 

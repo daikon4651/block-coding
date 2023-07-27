@@ -1,0 +1,109 @@
+// セクション・トップページ
+
+
+// 変数、ミックスイン、関数
+@use "@scss/global" as g;
+
+
+.topSection {
+  --min-size: 80;
+  --max-size: 120;
+  padding-block: var(--clamp-size);
+
+  &__lv1Heading {
+    --max-viewport02: 768;
+    --min-size02: 40;
+    --max-size02: 60;
+    margin-block-end: var(--clamp-size02);
+  }
+
+  &__image01 {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-inline: auto;
+    margin-block-end: 40px
+  }
+
+  &__section {
+
+    &:first-of-type {
+      margin-block-end: 30px;
+    }
+  }
+
+  &__lv2Heading {
+    --min-size: 20;
+    --max-size: 30;
+    --min-size02: 24;
+    --max-size02: 32;
+    margin-block-end: var(--clamp-size);
+    font-size: var(--clamp-size02);
+  }
+
+  &__skills {
+    list-style-type: revert;
+    padding-left: 20px;
+
+    &Item {
+
+      &:not(:last-child) {
+        margin-block-end: 10px;
+      }
+    }
+  }
+
+
+  @include g.mq() {
+
+    &__image02 {
+      --min-size: 60;
+      --max-size: 100;
+      margin-block-end: var(--clamp-size);
+
+    }
+
+    &__content {
+      display: flex;
+
+      & > * {
+        width: 50%;
+
+        &:first-child {
+          margin-inline-end: 48px;
+          margin-block-end: 0;
+        }
+      }
+    }
+  }
+
+
+  @include g.mq('lg-min') {
+
+    &__sectionWrapper {
+
+      & > section:first-child {
+        margin-block-end: 40px;
+      }
+    }
+
+    &__skills {
+      height: 75.196px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: flex-start;
+
+      &Item {
+        padding-inline-end: 50px;
+
+        &:nth-child(3n) {
+          margin-block-end: 0;
+        }
+      }
+    }
+  }
+
+
+}

@@ -6,10 +6,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-  entry: './src/js/app.js',
+  entry: {
+    app: './src/js/app.js',
+    another: './src/js/another.js',
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
-    // filename: 'js/bundle.[contenthash].js',
+    // filename: 'js/[name].bundle.js',
+    // chunkFilename: 'js/[name].js',
   },
   module: {
     rules: [
@@ -62,6 +66,23 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+        },
+        vendorModules: {
+          chunks: 'initial',
+          test: /[\\/]src[\\/]js[\\/]modules[\\/]/,
+          name: 'vendor-modules',
+          minSize: 0,
+        },
+      },
+    },
+  },
   plugins: [
     new ESLintPlugin({
       exclude: 'node_modules',
@@ -71,6 +92,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/ejs/index.ejs',
       filename: 'index.html',
+      chunks: ['app'],
+      inject: 'head',
+      // minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/ejs/service/index.ejs',
+      filename: 'service/index.html',
+      chunks: ['another'],
+      inject: 'head',
+      // minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/ejs/works/index.ejs',
+      filename: 'works/index.html',
+      chunks: ['another'],
       inject: 'head',
       // minify: false,
     }),
@@ -80,7 +116,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '@image': path.resolve(__dirname, './src/images/'),
+      '@images': path.resolve(__dirname, './src/images/'),
       '@scss': path.resolve(__dirname, './src/scss/'),
     },
   },
